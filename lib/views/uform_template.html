@@ -1,0 +1,23 @@
+<template name="new_field">
+  {{#if new_field}}
+    <form id="new_field">
+        <input type="text" name="label" placeholder="Name"/>
+        <input type="text" name="value" placeholder="Leave blank if n/a"/>
+        <input class='cancel' type="button" value="Close" />
+        <input class='save' type="button" value="add" />
+    </form>
+  {{else}}
+  <input class='add' type="button" value="Add Fields" />
+  {{/if}}
+</template>
+
+<template name="list_ufts">
+  {{#each ufts}}
+    {{> list_uft}}
+  {{/each}}
+</template>
+
+<template name="list_uft">
+  {{> new_field}} <br/>
+  {{> edit_ufields }}
+</template>
